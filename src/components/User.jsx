@@ -1,14 +1,9 @@
-
-function User({name, handle}) {
-   
+const User = ({ name, handle }) => {
   return (
-    <>
-   <span className="user">
-        <span className="name">{name}</span>
-        <span className="handle">{handle}</span>
-    </span>
-    </>
-    
+      <span className="user">
+          <span className="name">{name}</span>
+          <span className="handle">@{handle}</span>
+      </span>
   )
 }
 

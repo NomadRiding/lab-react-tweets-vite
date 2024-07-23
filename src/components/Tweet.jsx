@@ -4,23 +4,23 @@ import Timestamp from "./Timestamp";
 import Message from "./Message";
 import Actions from "./Actions";
 
-function Tweet({tweet}) {
+function Tweet({ tweet: { user: { name, image, handle }, timestamp, message } }) {
   return (
     <div className="tweet">
-  
-      <ProfileImage image={IMAGE_URL} />
-      <div className="body">
-        <div className="top"></div>
-        <User name={tweet.user.name} handle={tweet.handle} />
-        <Timestamp time={tweet.timestamp} />
+      <ProfileImage image={image} />
+        <div className="body">
+          <div className="top">
+          <User name={name} handle={handle} />
+          <Timestamp time={timestamp} />
         </div>
-      <Message message={tweet.message} />
+        <Message message={message} />
 
+      <div className="actions">
       <Actions />
-
+        </div>
+      </div>
     <i className="fas fa-ellipsis-h"></i>
     </div>
-
 );
 }
 
